@@ -1,6 +1,7 @@
 <?php
     $paragrafo= "L'espressione è l'orecchio soffice di una produzione velenosa e qualche volta ci credi anche tu.";
-
+    $badWord = $_GET["badword"];
+    $censored = str_ireplace("$badword", "***", $paragrafo);
 ?>
 
 
@@ -15,8 +16,17 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
+        <h1>PHP Badwords</h1>
 
 
-        <script src="" async defer></script>
+        <h2>La frase: </h2>
+        <p><?php echo $paragrafo?></p>
+
+        <form action="./index.php" method="GET">
+            <input type="text" name="badword" id="badword">
+            <button type="submit">
+                Censor
+            </button>
+        </form>
     </body>
 </html>
