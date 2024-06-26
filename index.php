@@ -33,12 +33,11 @@
             ?>
         </p>
 
-        <form action="./index.php" method="GET">
-            <input type="text" name="badWord" id="badWord">
-            <button type="submit" id="button1">
-                Censor
-            </button>
-        </form>
+        <h3>
+            La sua lunghezza è <h4><?php echo strlen($paragrafo)?></h4> 
+        </h3>
+
+        
         <div class="<?php echo $badWordCheck ? 'show' : 'hide'; ?>">
             <h2>
                 La frase censurata: 
@@ -50,8 +49,19 @@
 
                 ?>
             </p>
+
+            <h3>
+                La sua lunghezza è <h4><?php echo strlen($censored)?></h4> 
+            </h3>
         </div>
         
+        <form action="./index.php" method="GET">
+            <input type="text" name="badWord" id="badWord">
+            <button type="submit" id="button1">
+                Censor
+            </button>
+        </form>
+
     </body>
     <!--<script>
         const button1 = document.getElementById("button1");
